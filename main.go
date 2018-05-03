@@ -72,8 +72,16 @@ func main() {
 		output = convertDec(dec)
 		break
 	case "-a":
-		dec = int(rune(value[0]))
+		dec = int(value[0])
 		output = convertDec(dec)
+		break
+	default:
+		if string(type1[0:6]) == "--base" {
+			base, _ := strconv.Atoi(type1[6:])
+			conversion, _ := strconv.ParseInt(value, base, 64)
+			dec = int(conversion)
+			output = convertDec(dec)
+		}
 		break
 	}
 
