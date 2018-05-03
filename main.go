@@ -65,6 +65,12 @@ func main() {
 		conversion, _ := strconv.ParseInt(value, 2, 64)
 		dec = int(conversion)
 		output = convertDec(dec)
+		break
+	case "-h":
+		conversion, _ := strconv.ParseInt(value, 16, 64)
+		dec = int(conversion)
+		output = convertDec(dec)
+		break
 	}
 
 	fmt.Println(output)
