@@ -71,6 +71,10 @@ func main() {
 		dec = int(conversion)
 		output = convertDec(dec)
 		break
+	case "-a":
+		dec = int(rune(value[0]))
+		output = convertDec(dec)
+		break
 	}
 
 	fmt.Println(output)
